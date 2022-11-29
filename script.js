@@ -1,11 +1,5 @@
 const editor = document.getElementById("editor")
 const preview = document.getElementById("preview")
-const faIconEditorMax = document.getElementById("faIconEditorMax")
-const faIconEditorMin = document.getElementById("faIconEditorMin")
-const faIconPreviewerMax = document.getElementById("faIconPreviewerMax")
-const faIconPreviewerMin = document.getElementById("faIconPreviewerMin")
-const previewer = document.getElementById("previewer")
-const codeEditor = document.getElementById("codeEditor")
 
 let initialValue = `
 # Simple Programmer
@@ -43,57 +37,3 @@ const init = () =>{
     markedEditor(marked.parse(initialValue))
     return
 }
-
-
-const openFullscreenEditor = () =>{
-    document.body.style.width = "100%"
-    document.body.style.height = "100%"
-    previewer.style.visibility = "hidden"
-    editor.style.height = "100vh"  
-    editor.style.width = "88%" 
-    editor.style.right = "6%" 
-    editor.style.position = "absolute"
-    codeEditor.style.height = "104vh" 
-}
-
-const closeFullscreenEditor = () =>{
-    document.body.style.width = "100%"
-    document.body.style.height = "100%"
-    previewer.style.visibility = "visible"  
-    editor.style.height = "30vh"
-    editor.style.position = "absolute"
-    codeEditor.style.top = "0"
-    codeEditor.style.height = "34vh" 
-    codeEditor.style.bottom = "0" 
-}
-
-const openFullscreenPreviewer = () =>{
-    codeEditor.style.visibility = "hidden"
-    document.body.style.width = "100%"
-    document.body.style.height = "100%"
-    previewer.style.position = "absolute"
-    previewer.style.top = "0"
-} 
-
-const closeFullscreenPreviewer = () =>{
-    codeEditor.style.visibility = "visible"
-    document.body.style.width = "100%"
-    document.body.style.height = "100%" 
-    previewer.style.position = "relative"
-}
-
-faIconEditorMax.addEventListener('click', () =>{
-    openFullscreenEditor()
-})
-
-faIconEditorMin.addEventListener('click', () =>{
-    closeFullscreenEditor()
-})
-
-faIconPreviewerMax.addEventListener('click', () =>{
-    openFullscreenPreviewer()
-})
-
-faIconPreviewerMin.addEventListener('click', () =>{
-    closeFullscreenPreviewer()
-})
